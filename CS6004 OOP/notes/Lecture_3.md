@@ -84,7 +84,7 @@ int A_m2(){
 }
 ```
 
-### Fields are bound dynamically
+### Methods are bound dynamically
 ```Java
 int r = a.m1(5)
 ```
