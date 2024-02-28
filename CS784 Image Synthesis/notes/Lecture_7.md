@@ -83,12 +83,12 @@ $$L_0(x, \omega, \lambda, t) = L_e(x, \omega, \lambda, t) + \int_\omega f_r(x, \
 - For every radiometry quantity a corresponding photometry quantity
 
 ## Luminance and Radiance
-$$\\ 
-    \begin{align}
-    L_v =& \int L(\lambda) V(\lambda) d\lambda \\
-    L_v =& 683\int L(\lambda) Y(\lambda) d\lambda \\
-    \end{align}
-\\$$
+$$ 
+\begin{align*}
+L_v &= \int L(\lambda) V(\lambda) d\lambda \\
+L_v &= 683\int L(\lambda) Y(\lambda) d\lambda \\
+\end{align*}
+$$
 where Y i sthe standard CIE spectral response curve
 
 ## Radiometric computations
