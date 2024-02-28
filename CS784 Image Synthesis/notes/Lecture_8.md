@@ -32,13 +32,13 @@
  $$\text{Let } f_r(p, \omega_o, \omega_i) = k_d$$
 - Assume BRDF reflects a fraction p of the incoming light
 
-    $$
-    \begin{align}
-        \int f(p, \omega_o, \omega_i)cos\theta_id\omega_i &= p \\ 
-        k_d \int \int cos\theta_isin\theta_id\theta_id\phi_i &= p \\
-        2 \pi k_d \int cos\theta_isin\theta_id\theta_i &= p \\
-    \end{align}
-    $$
+$$
+\begin{align}
+\int f(p, \omega_o, \omega_i)cos\theta_id\omega_i &= p \\ 
+k_d \int \int cos\theta_isin\theta_id\theta_id\phi_i &= p \\
+2 \pi k_d \int cos\theta_isin\theta_id\theta_i &= p \\
+\end{align}
+$$
 
 
 ### Ideal Mirror BRDF
