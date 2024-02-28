@@ -51,7 +51,7 @@ The PHONG model
 - Local/Direct Illumination Model
     * $I_{local} = k_aI_a + \sum_{1\le i\le m}(k_dI_{di} + k_sI_{si})$
 - Global Illumination Model
-    * $I_{global} = I_local + k_rI_{reflected} + K_tI_{transmitted}$
+    * $I_{global} = I_{local}+ k_rI_{reflected} + K_tI_{transmitted}$
 - Reflected an transmitedd components may also be attenuated based on distance the ray travels
 
 ## Surface material properties

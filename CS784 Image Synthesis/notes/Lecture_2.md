@@ -34,7 +34,7 @@ You can form any image by a combination of suitably modulated sin images
 - __TODO__
 
 ## Pixel is Born
-- A PIXEL or picture elemetn is a discrete, point (visual or light) sample of the continuoius real world.
+- A PIXEL or picture elemetn is a discrete, point (visual or light) sample of the continuous real world.
 - It has no size, 
 - It has no shape
 - We can (re)construct views of the (real) world from pixels.
@@ -59,7 +59,7 @@ You can form any image by a combination of suitably modulated sin images
     * What kind of inks need to be applied, so that reflected light from the substrate throuht the inks produces the color
 
 Maximum color perception on fovia
-## COlor Spaces
+## Color Spaces
 - Spectral Color
     * Color evoked by monochromatic light
     * $X=\int_\lambda L_{e, \omega, \lambda}(\lambda)\bar{x}(\lambda)d\lambda$

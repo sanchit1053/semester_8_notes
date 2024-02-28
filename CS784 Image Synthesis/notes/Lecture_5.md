@@ -39,7 +39,7 @@ $$M = \begin{bmatrix} u_x & v_x & n_x \\u_y & v_y & n_y \\u_z & v_z & n_z \end{b
 
 ###### Transforming objects
 - ray `s + ct`
-- Objects : Sphere, COne, CYlinder, Box
+- Objects : Sphere, Cone, Cylinder, Box
 - We assume the objects to be normalized so that the ray-object intersection is easier
 - For e.g Sphere:  
      $x^2 + y^2 + z^2 = 1$

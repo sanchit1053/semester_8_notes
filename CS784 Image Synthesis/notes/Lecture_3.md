@@ -1,9 +1,9 @@
 # Lecture 3 <div style="text-align:right;"> 12/01/2024 </div>
 
 ## Other Components of the HVS
-- THe eye can see EM waves with wavelengths from 380 to 780 nm - visible spectrum
+- The eye can see EM waves with wavelengths from 380 to 780 nm - visible spectrum
 - Depth Perception
-    * Oculomotor - ergence (eyeball rotation) Accomodation (focus change)
+    * Oculomotor - Vergence (eyeball rotation) Accomodation (focus change)
     * inocular - Stereopsis, Retinal Disparity
     * Moncular - Motion Parallax, perspective, size
 - Color Opponency
@@ -11,7 +11,7 @@
 
 ## Light
 - EM radiation
-- Speed of light in vacuume is `c = 299,792, 458 m/s`
+- Speed of light in vacuume is `c = 299,792,458 m/s`
 - Exhibits dual nature
     * of a wave - waelength, frequency, amplitude
     * of a particle - photons
@@ -26,7 +26,7 @@
 
 ## Tristimulus Color Theory
 - Cones are of 3 types
-    * Eas of S(hort), M(edium) and L(ong) cones are differently sesitive to different wavelengths
+    * Each of S(hort), M(edium) and L(ong) cones are differently sesitive to different wavelengths
 - Suggests we should be able to use 3 parameters to describe all perceivable colors
 - Spectral Color
     * Color evoked by monochromatic light
@@ -34,7 +34,7 @@
 
 ## Metamers
 - Two different SPDs can be percieved as the same color.
-- THe is crucial for perceptual color matching by additive mixing
+- This is crucial for perceptual color matching by additive mixing
 
 Color Model 
 - RGB

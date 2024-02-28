@@ -38,7 +38,7 @@ $$L_0(x, \omega, \lambda, t) = L_e(x, \omega, \lambda, t) + \int_\omega f_r(x, \
 - Subsurface Scatterring
     * Light goes inside the object and does not reflect directly from point of incidence
 
-## Ground RUles for Global Illumination
+## Ground Rules for Global Illumination
 - Geometric Optics
     * not considering liht as oscillating EM fields, not quantum properties
 - Radiative transfer
@@ -55,12 +55,14 @@ $$L_0(x, \omega, \lambda, t) = L_e(x, \omega, \lambda, t) + \int_\omega f_r(x, \
     * has units $Wm^{-2}$
     * irradiance at a point on the outer sphere is less than irradiance at a point on the inner one
     * Energy recieved from a light source falls off with squared distance from it
-        $$ E = \frac{\Phi}{4\pi r^2} $$
+        $$E = \frac{\Phi}{4\pi r^2}$$
     * Origin of Lamberts Law
         + Light arriving at a surface is proportional to the cosine of the angle between the light direction and surface normal
-            $$\begin{align} 
-                E_1 =& \frac{\Phi}{A_1} =& \frac{\Phi}{A}\\ 
-                E_2 =& \frac{\Phi}{A_2} =& \frac{\Phi}{A/cos\theta}\end{align}$$
+            $$
+        \begin{align} 
+                E_1 =& \frac{\Phi}{A_1} =& \frac{\Phi}{A} \\ 
+                E_2 =& \frac{\Phi}{A_2} =& \frac{\Phi}{A/cos\theta}
+        \end{align}$$
 
 - Intensity
     * Flux density per unit solid angle $I = \frac{d\Phi}{d\omega}$
@@ -76,18 +78,19 @@ $$L_0(x, \omega, \lambda, t) = L_e(x, \omega, \lambda, t) + \int_\omega f_r(x, \
 
 ## Photometry
 - THe human eye is more sensitive to some wavelengths of teh visible light than other
-- The spectral response curve $V(\lamba)$
+- The spectral response curve $V(\lambda)$
 - blue light has to be 5 times stronger to have same brightness as green
 - For every radiometry quantity a corresponding photometry quantity
 
 ## Luminance and Radiance
-$$ \begin{align}
+$$\\ 
+    \begin{align}
     L_v =& \int L(\lambda) V(\lambda) d\lambda \\
     L_v =& 683\int L(\lambda) Y(\lambda) d\lambda \\
     \end{align}
-$$
+\\$$
 where Y i sthe standard CIE spectral response curve
 
 ## Radiometric computations
 $L_i(p, \omega)$ is incident radiance at p coming from a direction $\omega$
-Notice $\omega$ always points away from teh surface
+Notice $\omega

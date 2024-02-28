@@ -7,8 +7,8 @@
 
 ### Resolution, Bit Depth (bits per pixel), Transperancy
 
-## Hydanamic Range Image 
-- Dynamic Range ~ ratio of luminance of brightest and darkest regiono fan image
+## High dynamic Range Image 
+- Dynamic Range ~ ratio of luminance of brightest and darkest region of fan image
 - Capture, Display, Transmission, storage
 
 ##### Exposure
@@ -29,7 +29,7 @@
 - We have seen one redering method already (Rasterization)
 - Issues
     * Visiblity
-        + Whatparts of a scene are visible?
+        + What parts of a scene are visible?
             + Clipping
             + CUlling (backface and occlusion)
     * Illumination
@@ -79,10 +79,10 @@
 - Visibility
     * Ray- Object intersections
 - Illumination
-    *
+    * Pixel Color Determination Shading
 
 ## Ray Representation
 - $R_0 = [x_0 y_0 z_0]$ Ray Origins
 
 
-# __TODO__
+# READ INTERSECTION FROM SLIDES
