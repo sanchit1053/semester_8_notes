@@ -3,6 +3,7 @@
 
 ## Monte carlo simulation
 - See Slides
+
 $$
 \begin{align*}
     E[F_n] &= E[\frac{b - a}{N}\sum_{i=1}^{N}f(x_i)] \\
