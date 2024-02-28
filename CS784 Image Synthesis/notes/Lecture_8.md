@@ -7,13 +7,13 @@
 - Convention, Rays point outside out of the surface
 
 1. Reciprocity
-    $$ f_r(p, \omega_o, \omega_i) = f_r(p, \omega_i, \omega_o) $$
+    $$f_r(p, \omega_o, \omega_i) = f_r(p, \omega_i, \omega_o)$$
     Rays from one side is same as rays from the other side
 2. Energy Conservation
-    $$ \int f_r(p, \omega_o, \omega')cos\theta'd\omega' \le 1 $$
+    $$\int f_r(p, \omega_o, \omega')cos\theta'd\omega' \le 1$$
     integrate over all angles then it has to be less than one as outgoing energy cannot be more than incoming energy
 3. consider a general f() over the sphere of all directions and we get the BSDF(BRDF + BTDF)
-    $$ L_o(p, \omega_o) = \int_\Omega f(p, \omega_o, \omega_i)L_i(p, \omega_i)|cos\theta_i)|d\omega_i $$
+    $$L_o(p, \omega_o) = \int_\Omega f(p, \omega_o, \omega_i)L_i(p, \omega_i)|cos\theta_i)|d\omega_i$$
 
 #### Sources
 - Measured Data ()
@@ -29,7 +29,7 @@
 - Retro reflective
 
 ### Ideal Diffuse BRDF
- $$\text{Let } f_r(p, \omega_o, \omega_i) = k_d $$
+ $$\text{Let } f_r(p, \omega_o, \omega_i) = k_d$$
 - Assume BRDF reflects a fraction p of the incoming light
 
     $$
@@ -54,10 +54,10 @@
 - BTDF is zero 
 
 ### Glossy BRDF
-$$ f_{phong} = k_s (\omega_o.R(\omega_i, \hat{n}))^g $$
+$$f_{phong} = k_s (\omega_o.R(\omega_i, \hat{n}))^g$$
 Phenomenological
 
-$$ f_{bling_phong} = k_s' (\omega_{half} . \hat{n}))^h $$
+$$f_{bling_phong} = k_s' (\omega_{half} . \hat{n}))^h$$
 also, Phenomenological but gives less error
 
 ## Microfacet BRDF
