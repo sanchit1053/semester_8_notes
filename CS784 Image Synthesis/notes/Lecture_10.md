@@ -3,23 +3,22 @@
 ## Estimator efficiency
 
 Efficience of the estimator is defined as 
-$$
-    \epsilon[F_N] = \frac{1}{V[F_N]T[F_n]}
-$$
+$$\epsilon[F_N] = \frac{1}{V[F_N]T[F_n]}$$
 
 Here $V[F_N]$ is variance and $T[F_N]$ is time required to compute its value
 
 Noise decrease slowly with number of samples
+
 $$
 \begin{align}
-    \int_\Omega f(x)dx =& \frac{1}{N}\sum_{i = 1}^NY_i \\
-    Y_i =& \frac{f(x_i)}{p(x_i)} 
+\int_\Omega f(x)dx =& \frac{1}{N}\sum_{i = 1}^NY_i \\
+Y_i =& \frac{f(x_i)}{p(x_i)} 
 \end{align}
 $$
 
 
 ## Importance sampling
-- Given the MC estimator $F_N = \frac{1}{N}\sum_{i = 1}^N\frac{f(x_i)}{p(x_i)}$
+- Given the MC estimator $F_N = \frac{1}{N}\sum_{i=1}^N\frac{f(x_i)}{p(x_i)}$
 - if we know $c =\frac{1}{\int f(x) dx}$
 - then $\frac{f(x_i)}{p(x_i)} = \frac{1}{c} = \int f(x)d(x)$
 - choose p(x_i) over 
@@ -30,9 +29,7 @@ $$
 ### Russian Roulette
 - The interfrand is not evaluated for a particular sample with some probability q and a constant value c is used
 - Integrand is evaluated with probability $1-q$ and weighteed by $1/1-q$
-- $$
-    F' =\large{\{}\begin{matrix}\frac{F-qc}{1-q} & \text{ if } \zeta > q \\ c & otherwise \end{matrix}
-$$
+- $$F' =\large{\{}\begin{matrix}\frac{F-qc}{1-q} & \text{ if } \zeta > q \\ c & otherwise \end{matrix}$$
 - Expected value $E[F'] = (1 - q)\frac{E[F]-qc}{1-q} + qc$
 
 ## Method of rejection
