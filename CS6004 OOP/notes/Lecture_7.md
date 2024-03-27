@@ -5,28 +5,23 @@
 <td> statement </td> <td> Existing </td> <td> Generated </td>
 </thead>
 <tr>
-<td> l = v copy </td>
+<td> l -> v </td>
 <td> 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     l;
-     v -> O
-}
-``` 
+```mermaid
+graph LR
+    l([l])
+    v([v]) --> O
+```
 
 </td>
 <td>
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l -> O;
-     v -> O
-}
-``` 
+
+```mermaid
+graph LR
+    l([l]) & v([v]) --> O
+```
 
 </tr>
 <tr>
@@ -34,64 +29,45 @@ digraph G{
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l1;
-     l2 -> O;
-     O -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1])
+    l2([l2]) --> O -->|f| O2
+```
 
 </td>
 <td>
 
-
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l1->O2;
-     l2 -> O;
-     O -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O2
+    l2([l2]) --> O -->|f| O2
+```
 
 </td>
 </tr>
 
 <tr>
 <td>
-
-l1.f = l2 `store`
-
+l1.f = l2
 </td>
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O1, O2[shape=box]
-     l1 -> O1;
-     l2 -> O2;
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O1
+    l2([l2]) --> O2
+```
 
 </td>
 <td>
 
-
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O1, O2[shape=box]
-     l1->O1;
-     l2 -> O2;
-     O1 -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O1-->|f| O2
+    l2([l2]) --> O2
+```
 
 </td>
 </tr>
@@ -102,63 +78,47 @@ l = new()
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     l;
-}
-``` 
+```mermaid
+graph LR
+    l([l])
+```
 
 </td>
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-    l->O
-}
-``` 
+```mermaid
+graph LR
+    l([l])-->O
+```
 
 </td>
 </tr>
 </table>
-
 - for copy, l2.f and new, we can kill the earlier `pointing to` for a flow sensitive analysis
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-    O1, O2, O3[shape=box];
-    l1 -> O1;
-    O1 -> O3[label = f];
-    l2 -> O2;
-}
+
+```mermaid
+graph LR
+    l2([l2]) --> O2
+    l1([l1]) --> O1 -->|f| O3
 ```
 after statement `l1.f = l2`
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-    O1, O2, O3[shape=box];
-    l1 -> O1;
-    O1 -> O2[label = f];
-    l2 -> O2;
-}
+
+```mermaid
+graph LR
+    O3
+    l2([l2]) --> O2
+    l1([l1]) --> O1 -->|f| O2
 ```
 If able to do this then it is called a **strong update** 
 
-
-```dot
-digraph G{
-    graph [rankdir="LR"];
-    O1, O2, O3[shape=box];
-    l1 -> O1;
-    O1 -> O2[label = f];
-    O1 -> O3[label = f];
-    l2 -> O2;
-}
+```mermaid
+graph LR
+    O3
+    l2([l2]) --> O2
+    l1([l1]) --> O1 -->|f| O2 & O3
 ```
 This is called a **Weak Update** 
 
@@ -174,14 +134,11 @@ This is called a **Weak Update**
     a.f = b;
 ```
 
-```dot
-digraph G{
-    b -> O0;
-    a -> O1;
-    O1 -> O2[label=" f, should it be removed?"];
-    c -> O1;
-    O1 -> O0
-}
+
+```mermaid
+graph LR
+    a([a]) & c([c]) --> O1 -->|f, should it be removed| O2
+    b([b]) & O1 --> O0
 ```
 
 #### strong update
@@ -266,7 +223,7 @@ digraph G{
     O3 -> O11 [label = f];
 }
 ```
-- Start mapping O1 to Op adn O2 to Oq
+- Start mapping O1 to Op and O2 to Oq
 
 add to the function bar
 ```java

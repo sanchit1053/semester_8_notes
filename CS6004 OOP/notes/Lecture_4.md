@@ -101,19 +101,12 @@ $f \in Field$
 ### Allocation site Abstraction
 - summarize the heap such that the maximum number of objects bound by maximum number type of allocations site
  
-```dot
-Digraph G{
-    o1[shape=square];
-    o4[shape=square];
-    o6[shape=square];
-    x -> o1;
-    <!-- y -> o1; -->
-    o1 -> o4 [label=f];
-    <!-- y ->o4; -->
-    o4 -> o6[label=f];
-    y -> o6;
-    o6 -> o4[label=f];
-}
+
+```mermaid
+graph LR
+    x([x]) --> o1 -->|f|o4 -->|f| o6
+    o6 -->|f| o4
+    y([y]) --> o6
 ```
 - We achive a fixed point as the summary at end of program will not change
 
@@ -121,30 +114,14 @@ Digraph G{
 - NODES : Instructions
 - EDGES : flow
 
-```dot
-Digraph G {
-    c1[label="x = new()"];
-    c2[label="y = x"];
-    c3[label="y.f = new()"];
-    c4[label="y = y.f"];
-    c5[label="y.f = new()"];
-    c6[label="y = y.f"];
-    c1->c2->c3->c4->c5->c6->c3
-}
+```mermaid
+graph LR
+    c1(["x = new()"])-->c2(["y = x"])-->c3(["y.f = new()"])-->c4(["y = y.f"])-->c5(["y.f = new()"])-->c6(["y=y.f"])-->c3
 ```
 
-```dot
-Digraph G{
-    c1[label=" x = new();"];
-    c2[label=" x.g = null;"];
-    c3[label=" y = x;"];
-    c4[label=" y = new();"];
-    c5[label=" y.f = null;"];
-    c6[label=" y.g = null"];
-    c7[label=" x.f = new();"];
-    c1->c2->c3;
-    c2->c4->c5->c6->c7;
-}
+```mermaid
+graph LR
+    c1(["x = new()"])-->c10(["x.g = null"]) --> c2(["y = x"])
+    c10-->c3(["y = new()"])-->c4(["y.f = null"])-->c5(["y.g = null"])-->c6(["x.f = new()"])
 ```
-
 

@@ -14,28 +14,23 @@
 
 ### Points to Graph (PTG)
 
-```dot
-digraph G{
-    O1,O2,O3,O7[shape=box];
-    a -> O1;
-    O1-> O2[label=f];
-    O2->O3[label=g];
-    c -> O3;
-    d -> O1;
-    e -> O2;
-    p -> O7
-}
+```mermaid
+graph LR
+    a([a]) & d([d])-->O1
+    O1 -->|f| O2 
+    e([e]) --> O2
+    O2 -->|g| O3 
+    c([c]) --> O3
+    p([p]) --> O7
 ```
 
 ### Initialization
 say that the above code is part of a function which has parameters `p` and `q`;  
 ∀ parameters `p` create a dummy object for each parameter
-```dot
-digraph G{
-    graph [rankdir="LR"];
-    Op[shape=box];
-    p -> Op;
-}
+
+```mermaid
+graph LR
+    p([p]) --> Op
 ```
 
 
@@ -47,25 +42,20 @@ digraph G{
 <td> l -> v </td>
 <td> 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     l;
-     v -> O
-}
-``` 
+```mermaid
+graph LR
+    l([l])
+    v([v]) --> O
+```
 
 </td>
 <td>
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l -> O;
-     v -> O
-}
-``` 
+
+```mermaid
+graph LR
+    l([l]) & v([v]) --> O
+```
 
 </tr>
 <tr>
@@ -73,29 +63,20 @@ digraph G{
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l1;
-     l2 -> O;
-     O -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1])
+    l2([l2]) --> O -->|f| O2
+```
 
 </td>
 <td>
 
-
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-     l1->O2;
-     l2 -> O;
-     O -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O2
+    l2([l2]) --> O -->|f| O2
+```
 
 </td>
 </tr>
@@ -107,28 +88,20 @@ l1.f = l2
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O1, O2[shape=box]
-     l1 -> O1;
-     l2 -> O2;
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O1
+    l2([l2]) --> O2
+```
 
 </td>
 <td>
 
-
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O1, O2[shape=box]
-     l1->O1;
-     l2 -> O2;
-     O1 -> O2[label = f]
-}
-``` 
+```mermaid
+graph LR
+    l1([l1]) --> O1-->|f| O2
+    l2([l2]) --> O2
+```
 
 </td>
 </tr>
@@ -139,31 +112,24 @@ l = new()
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     l;
-}
-``` 
+```mermaid
+graph LR
+    l([l])
+```
 
 </td>
 <td>
 
 
-```dot
-digraph G{
-    graph [rankdir="LR"];
-     O[shape=box]
-    l->O
-}
-``` 
+```mermaid
+graph LR
+    l([l])-->O
+```
 
 </td>
 </tr>
 </table>
 
-```java
-```
 
 $\text{OUT}(n) = ([(n)]) \text{IN}(n)$
 
@@ -192,47 +158,30 @@ Possible that there is no object l2.f
 ```
 
 True IF STATEMENT
-```dot
-digraph G{
-    O1, O2, O3, O4 [shape = box]
-    a -> O1;
-    O1 -> O2[label = f]
-    b -> O3;
-    O3 -> O4[label = f]
-    r -> O1;
-}
 
+```mermaid
+graph LR
+    a([a]) & r([r]) --> O1 -->|f| O2
+    b([b]) --> O3 -->|f| O4
 ```
 
 False IF statement
-```dot
-digraph H{
-    O1, O2, O3, O5[shape = box];
-    a -> O1;
-    O1 -> O2[label = f]
-    b -> O3;
-    O3 -> O5[label = f]
-    r -> O3
-}
+
+```mermaid
+graph LR
+    a([a])--> O1 -->|f| O2
+    b([b]) & r([r])  --> O3 -->|f| O4
 ```
 
 
 We are working with may point to, So we take the **union** of graph
 
-```dot
-digraph H{
-    O1, O2, O3,O4, O5, O7[shape = box];
-    a -> O1;
-    O1 -> O2[label = f]
-    b -> O3;
-    O3 -> O5[label = f]
-    O3 -> O4[label = f]
-    r -> O3
-    r -> O1
-    s -> O3
-    s -> O1
-    O5, O4 -> O7 [label = g]
-}
+
+```mermaid
+graph LR
+    a([a]) & r--> O1 -->|f| O2
+    s([s]) --> O1 & O3
+    b([b]) & r([r])  --> O3 -->|f| O4 & O5 -->|g| O7
 ```
 
 ## IDFA 

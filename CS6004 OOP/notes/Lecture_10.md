@@ -1,4 +1,4 @@
-# lecture 10 <div style="text-align"> 14/02/2024 </div>
+# lecture 10 <div style="text-align:right"> 14/02/2024 </div>
 
 ```java
     public class Test{
